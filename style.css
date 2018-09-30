@@ -1,0 +1,135 @@
+body {
+    background: rgba(0,0, 0, 0.9);
+    margin: 0;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.bg::after {
+    content:'';
+    height: 100vh;
+    width: 100%;
+    background-image: url(bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    transition: all 1000ms;
+}
+
+.bg:hover:after {
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+} 
+
+.bg:hover .content {
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
+
+.content {
+    position: absolute;
+    z-index: 1;
+    top: 5%;
+    left: 50%;
+    margin-top: 105px;
+    margin-left: -145px;
+    height: 350px;
+    width: 300px;
+    text-align: center;
+    transition: all 1000ms;
+}
+.content .logo {
+    height: 130px;
+    width: 130px;
+}
+
+.content .title {
+    font-size:2.2rem;
+    margin-top: 1rem;
+    color: #333;
+
+}
+.content .text {
+    line-height: 1.7;
+    margin-top: 1rem;
+    color: #333;
+
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    overflow: hidden;
+    padding: 4rem 1rem;
+}
+.grid-3 {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.grid-2 {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+}
+.center {
+    text-align: center;
+    margin: auto;
+}
+.bg-light {
+    background: #f4f4f4;
+    color: #333;
+}
+.bg-dark {
+    background: #333;
+    color: #f4f4f4;
+}
+footer {
+    padding: 2.2rem;
+}
+footer p {
+    margin: 0;
+}
+
+/* Small Screens */ 
+
+@media(max-width: 560px) {
+    .bg::after {
+        height: 60vh;
+    }
+    .content {
+        top: 1rem;
+        margin-top: 5px;
+    }
+    .content .logo {
+       height: 115px;
+       width: 115px;
+    }
+    .content .text {
+        display: none;
+        
+    }
+    .grid-3, .grid-2, .center {
+        grid-template-columns: 1fr;
+        text-align: center;
+            
+    }
+    .services div {
+        border-bottom: #333 dashed 1px;
+        padding: 1.2rem 1rem;
+    }
+}
+
+/* Landscape screens */
+@media(max-height: 500px) {
+    .content .title,
+    .content .text {
+        display: none;
+    }
+    .content {
+        top: 15%;
+    }
+
+}
